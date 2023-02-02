@@ -1,19 +1,15 @@
-<template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <HelloWorld/>
-</template>
-
-<script lang="ts">
-import HelloWorld from './components/HelloWorld.vue';
-
-import { defineComponent } from 'vue';
-export default defineComponent({
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-});
+<script lang="ts" setup>
+  //@ts-ignore
+  import Input from "./components/Input.vue"
+  const saludo = "Hola Vue"
 </script>
+
+<template>
+  <h1>{{ saludo }}</h1>
+  <Input />
+  <Input />
+  <Input />
+</template>
 
 <style>
 #app {
