@@ -5,11 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Web Estática</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
     <h1>Hola desde mi web estática</h1>
     <p id="p-texto">texto</p>
     <button id="btn-cambiar">Cambia texto</button>
+    
+    <div id="app">
+        <h1>Soy Vue</h1>
+        <p>{{ texto }}</p>
+        <p>El tenista que más me gusta es: {{ tenista.nombre }}</p>
+        <p>Su ranking es el: {{ tenista.ranking }}</p>
+        <h2>Contador</h2>
+        <p>{{ contador }}</p>
+        <button>-</button>
+        <button v-on:click="incrementaContador">+</button>
+    </div>
+    
     <script src="index.js"></script>
+    <script src="appVue.js"></script>
 </body>
 </html>
