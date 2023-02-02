@@ -1,14 +1,15 @@
 <script lang="ts" setup>
   //@ts-ignore
   import Input from "./components/Input.vue"
+  //@ts-ignore
+  import Button from "./components/Button.vue"
   const saludo = "Hola Vue"
 </script>
 
 <template>
   <h1>{{ saludo }}</h1>
   <Input />
-  <Input />
-  <Input />
+  <Button />
 </template>
 
 <style>
