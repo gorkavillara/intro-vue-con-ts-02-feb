@@ -1,9 +1,16 @@
 <template>
-    <button @click="log">{{ buttonText }}</button>
+    <button @click="onClickEvent">{{ buttonText }}</button>
 </template>
 
 <script lang="ts" setup>
-    const buttonText = "Botón"
+    // defineProps(["text", "onClickEvent"])
+
+    const { text, onClickEvent } = defineProps<{
+        text: string
+        onClickEvent?: () => any
+    }>()
+
+    const buttonText = text
     const log = () => console.log("Hola desde el botón")
 </script>
 
