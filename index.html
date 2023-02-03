@@ -4,26 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Web Estática</title>
+    <title>Mi web vue con instancias</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    <h1>Hola desde mi web estática</h1>
-    <p id="p-texto">texto</p>
-    <button id="btn-cambiar">Cambia texto</button>
-    
+    <div id="modal">{{ info }}</div>
     <div id="app">
-        <h1>Soy Vue</h1>
-        <p>{{ texto }}</p>
-        <p>El tenista que más me gusta es: {{ tenista.nombre }}</p>
-        <p>Su ranking es el: {{ tenista.ranking }}</p>
-        <h2>Contador</h2>
-        <p>{{ contador }}</p>
-        <button>-</button>
-        <button v-on:click="incrementaContador">+</button>
+        <h1 ref="MiSaludo">{{ saludo }}</h1>
+        <button @click="cambiaSaludo">Cambia saludo</button>
+        <br />
+        <button @click="checkEl">Chequea $el</button>
+        <br />
+        <button @click="checkData">Chequea $data</button>
+        <br />
+        <button @click="checkRefs">Chequea $refs</button>
     </div>
-    
-    <script src="index.js"></script>
-    <script src="appVue.js"></script>
+    <script>
+        const miApp = Vue.createApp({
+            data() {
+                // Hacemos todos los cálculos que queramos
+                // Definimos variables, etc
+                return {
+                    saludo: "Hola mundo",
+                    otros: "Más cosas",
+                    arrayDeNums: [1, 2, 3, 4, 5]
+                }
+            },
+            methods: {
+                cambiaSaludo() {
+                    this.saludo = "Hola vue"
+                },
+                checkEl() {
+                    console.log(this.$el)
+                },
+                checkData() {
+                    console.log(this.$data)
+                },
+                checkRefs() {
+                    console.log(this.$refs.MiSaludo)
+                }
+            }
+        })
+        miApp.mount("#app")
+    </script>
+
+    <script>
+        // Me voy a crear otra instancia para los modales
+        const miModal = Vue.createApp({
+            data() {
+                return {
+                    info: "Este es mi modal"
+                }
+            }
+        })
+        miModal.mount("#modal")
+    </script>
 </body>
 </html>
