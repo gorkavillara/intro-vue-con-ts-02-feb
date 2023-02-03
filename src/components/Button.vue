@@ -3,8 +3,6 @@
 </template>
 
 <script lang="ts" setup>
-    // defineProps(["text", "onClickEvent"])
-
     const { text, onClickEvent } = defineProps<{
         text: string
         onClickEvent?: () => any
