@@ -1,5 +1,6 @@
 <script lang="ts" setup>
   import { ref } from "vue"
+  import Padre from './components/Padre.vue';
   import LifeCycle from './components/LifeCycle.vue';
   import PokemonLifeCycle from './components/PokemonLifeCycle.vue'
   
@@ -15,10 +16,12 @@
 <template>
   <!-- <h1 ref="greeting">Hello</h1> -->
   <!-- <button @click="checkRefs">check Refs</button> -->
-  <div v-if="display">
+  <!-- <div v-if="display">
     <PokemonLifeCycle />
-  </div>
+  </div> -->
   <!-- <button @click="toggleDisplay">Display</button> -->
+
+  <Padre />
 </template>
 
 <style>
