@@ -1,19 +1,25 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-</template>
-
-<script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
-
-export default defineComponent({
-  name: 'App',
-  components: {
-    HelloWorld
+<script lang="ts" setup>
+  import { ref } from "vue"
+  import LifeCycle from './components/LifeCycle.vue';
+  import PokemonLifeCycle from './components/PokemonLifeCycle.vue'
+  
+  const checkRefs = () => {
+    
   }
-});
+  const display = ref(true)
+  const toggleDisplay = () => {
+    display.value = !display.value
+  }
 </script>
+
+<template>
+  <!-- <h1 ref="greeting">Hello</h1> -->
+  <!-- <button @click="checkRefs">check Refs</button> -->
+  <div v-if="display">
+    <PokemonLifeCycle />
+  </div>
+  <!-- <button @click="toggleDisplay">Display</button> -->
+</template>
 
 <style>
 #app {
