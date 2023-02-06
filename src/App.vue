@@ -7,11 +7,12 @@ import CheckBoxes from './components/CheckBoxes.vue';
 import Radios from './components/Radios.vue';
 import Select from './components/Select.vue';
 import UsingCustomToggle from './components/UsingCustomToggle.vue';
+import FormularioEnvio from './components/FormularioEnvio.vue';
 
 </script>
 
 <template>
-  <UsingCustomToggle />
+  <FormularioEnvio />
 </template>
 
 <style>
