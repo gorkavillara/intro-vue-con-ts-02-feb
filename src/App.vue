@@ -1,27 +1,9 @@
 <script lang="ts" setup>
-  import { ref } from "vue"
-  import Padre from './components/Padre.vue';
-  import LifeCycle from './components/LifeCycle.vue';
-  import PokemonLifeCycle from './components/PokemonLifeCycle.vue'
-  
-  const checkRefs = () => {
-    
-  }
-  const display = ref(true)
-  const toggleDisplay = () => {
-    display.value = !display.value
-  }
+import Contadores from "./components/Contadores.vue"
 </script>
 
 <template>
-  <!-- <h1 ref="greeting">Hello</h1> -->
-  <!-- <button @click="checkRefs">check Refs</button> -->
-  <!-- <div v-if="display">
-    <PokemonLifeCycle />
-  </div> -->
-  <!-- <button @click="toggleDisplay">Display</button> -->
-
-  <Padre />
+  <Contadores />
 </template>
 
 <style>
