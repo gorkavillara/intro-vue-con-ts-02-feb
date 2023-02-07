@@ -1,7 +1,9 @@
 <script lang="ts" setup>
+  import ListaTareas from './components/ListaTareas.vue';
 </script>
 
 <template>
+  <ListaTareas />
 </template>
 
 <style>
