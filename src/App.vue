@@ -1,10 +1,13 @@
 <script lang="ts" setup>
   import UsingCustomDirectives from './components/UsingCustomDirectives.vue';
   import FormulariosDirectives from './components/FormulariosDirectives.vue';
+  import EnfoqueAuto from './components/EnfoqueAuto.vue';
+  import FormatoMoneda from './components/FormatoMoneda.vue';
+  import ConfirmaAccion from './components/ConfirmaAccion.vue';
 </script>
 
 <template>
-  <FormulariosDirectives />
+  <ConfirmaAccion />
 </template>
 
 <style>
