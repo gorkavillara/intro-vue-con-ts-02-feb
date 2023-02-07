@@ -1,10 +1,11 @@
 <script lang="ts" setup>
-  import ListaTareas from './components/ListaTareas.vue';
-  import Autenticacion from './components/Autenticacion.vue';
+  import RMFetch from './components/RMFetch.vue';
+  import SWAxiosFetch from './components/SWAxiosFetch.vue';
+  import SWAxiosGlobal from './components/SWAxiosGlobal.vue';
 </script>
 
 <template>
-  <Autenticacion />
+  <SWAxiosGlobal />
 </template>
 
 <style>
