@@ -16,7 +16,7 @@
         updated(el: HTMLElement, binding: DirectiveBinding) {
             // console.log(el.innerText)
             el.innerText = `${Number(binding.value).toFixed(2)} €`
-        }
+        },
     }
 
     const vDragNDrop = {

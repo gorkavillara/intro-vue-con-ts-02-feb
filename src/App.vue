@@ -4,10 +4,11 @@
   import EnfoqueAuto from './components/EnfoqueAuto.vue';
   import FormatoMoneda from './components/FormatoMoneda.vue';
   import ConfirmaAccion from './components/ConfirmaAccion.vue';
+  import LifeCycleDirectives from './components/LifeCycleDirectives.vue';
 </script>
 
 <template>
-  <ConfirmaAccion />
+  <LifeCycleDirectives />
 </template>
 
 <style>
