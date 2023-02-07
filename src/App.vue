@@ -1,9 +1,10 @@
 <script lang="ts" setup>
   import ListaTareas from './components/ListaTareas.vue';
+  import Autenticacion from './components/Autenticacion.vue';
 </script>
 
 <template>
-  <ListaTareas />
+  <Autenticacion />
 </template>
 
 <style>
