@@ -1,18 +1,39 @@
-import { createApp, DirectiveBinding } from 'vue'
-import App from './App.vue'
-import { useHttp } from './utils/http'
+import { createApp } from "vue";
+import {
+  createRouter,
+  createWebHistory,
+  createWebHashHistory,
+  RouteLocationNormalized,
+} from "vue-router";
+import routes from "./routes";
 
-const app = createApp(App)
+import App from "./App.vue";
+const tienePermiso = async (to: RouteLocationNormalized): Promise<boolean> => {
+    // El usuario está registrado?
+    // El usuario registrado tiene acceso a ese to
+    return true
+}
 
-app.directive("negrita", (el: HTMLElement, binding: DirectiveBinding) => {
-    if (binding.modifiers.semibold) {
-        return el.style.fontWeight = "600"
+const app = createApp(App);
+
+const router = createRouter({
+  routes,
+  history: createWebHashHistory(),
+  scrollBehavior(to, from, savedPosition) {
+    return to.hash ? { el: to.hash } : new Promise((resolve) => {
+      setTimeout(() => resolve({ top: 0, left: 0, behavior: "smooth" }), 300);
+    });
+  },
+});
+
+router.beforeEach(async (to, from) => {
+    const hasPermission = await tienePermiso(to)
+    if (hasPermission) {
+        return true
     }
-    el.style.fontWeight = "800"
+    return '/login'
 })
 
-const { swapiHttp } = useHttp()
+app.use(router);
 
-app.provide("swapiHttp", swapiHttp)
-
-app.mount('#app')
+app.mount("#app");
